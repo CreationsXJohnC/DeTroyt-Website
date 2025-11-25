@@ -1,0 +1,5 @@
+.hero { position: relative; min-height: 100vh; display: grid; place-items: center; overflow: hidden; }
+.bg { position: absolute; inset: 0; filter: brightness(.7) contrast(1.1); }
+.overlay { position: relative; z-index: 10; text-align: center; }
+.logoImg { display: inline-block; filter: drop-shadow(0 10px 30px rgba(18,242,242,.2)); }
+.ctaWrap { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
