@@ -2,6 +2,7 @@
 .knob { width: 60px; height: 60px; border-radius: 50%; position: relative; background: radial-gradient(closest-side, #1a1a1d 0%, #0e0e12 55%, #060608 100%); box-shadow: none; outline: 1px solid rgba(255,255,255,.06); transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1), box-shadow .15s ease, filter .15s ease; will-change: transform; transform-origin: 50% 50%; }
 .knob::before { content: ""; position: absolute; inset: -8px; border-radius: 50%; background: conic-gradient(from 0deg, transparent 0 8deg, rgba(255,255,255,.08) 8deg 16deg, transparent 16deg 24deg); mask: radial-gradient(circle at center, transparent 30px, #000 30px); pointer-events: none; }
 .knob::after { content: ""; position: absolute; left: 50%; top: 12px; width: 5px; height: 18px; border-radius: 2px; transform: translateX(-50%); background: var(--knob-color, #12f2f2); box-shadow: 0 0 14px var(--knob-color, #12f2f2); }
+.logo { position: absolute; left: 50%; top: 34px; transform: translateX(-50%); width: 24px; height: auto; display: block; pointer-events: none; filter: drop-shadow(0 0 2px rgba(0,0,0,.5)); }
 .wrap:hover .knob { transform: translateY(-1px) rotate(320deg); filter: brightness(1.05); box-shadow: 0 0 26px 8px var(--knob-color, #12f2f2); }
 .wrap:active .knob { transform: rotate(360deg); }
 .label { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #e6e6eb; transition: color .15s ease, text-shadow .15s ease; }

@@ -25,12 +25,12 @@ export default function JourneyPage() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 24 }}>
+          <div style={{ marginTop: 6 }}>
             <a className="btn" href="/resume.pdf" download>Download Resume</a>
           </div>
         </div>
       </section>
-      <section className="section" style={{ paddingTop: 40 }}>
+      <section className="section" style={{ paddingTop: 8, paddingBottom: 0 }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: 42, textAlign: 'center' }}>Professional Services</h2>
           <BeatPad

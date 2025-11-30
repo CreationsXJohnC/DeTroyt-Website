@@ -8,7 +8,9 @@ export default function KnobButton({ href, label, color }: { href: string; label
   const active = pathname === href
   return (
     <Link href={href} className={`${styles.wrap} ${active ? styles.active : ''}`} style={{ ['--knob-color' as any]: color }}>
-      <div className={styles.knob} />
+      <div className={styles.knob}>
+        <img className={styles.logo} src="/assets/brandcontent/detroytlogo/IMG_2651.PNG" alt="logo" />
+      </div>
       <div className={styles.label}>{label}</div>
     </Link>
   )
