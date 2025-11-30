@@ -1,3 +1,13 @@
-.nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; padding: 10px 14px; border-radius: 9999px; background: rgba(17,17,24,.6); backdrop-filter: blur(10px); border: 1px solid #1c1c21; z-index: 50; }
-.link { padding: 8px 12px; border-radius: 9999px; color: #e6e6eb; }
-.active { background: #15151c; }
+.nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 28px; z-index: 50; background: transparent; padding: 0; }
+.link { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 9999px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; border: 1px solid rgba(11,11,15,.8); box-shadow: 0 4px 0 rgba(11,11,15,.8), 0 10px 30px rgba(0,0,0,.25); transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
+.link:hover { transform: translateY(-1px); box-shadow: 0 5px 0 rgba(11,11,15,.8), 0 14px 36px rgba(0,0,0,.35); filter: brightness(1.05); }
+.btnCyan { background: #12f2f2; color: #0b0b0f; }
+.btnCyan:hover { box-shadow: 0 0 22px 6px rgba(18,242,242,.7), 0 5px 0 rgba(11,11,15,.8); }
+.btnMagenta { background: #a855f7; color: #0b0b0f; }
+.btnMagenta:hover { box-shadow: 0 0 22px 6px rgba(168,85,247,.7), 0 5px 0 rgba(11,11,15,.8); }
+.btnAmber { background: #f59e0b; color: #0b0b0f; }
+.btnAmber:hover { box-shadow: 0 0 22px 6px rgba(245,158,11,.7), 0 5px 0 rgba(11,11,15,.8); }
+.btnLime { background: #84cc16; color: #0b0b0f; }
+.btnLime:hover { box-shadow: 0 0 22px 6px rgba(132,204,22,.7), 0 5px 0 rgba(11,11,15,.8); }
+.btnRose { background: #fb7185; color: #0b0b0f; }
+.btnRose:hover { box-shadow: 0 0 22px 6px rgba(251,113,133,.7), 0 5px 0 rgba(11,11,15,.8); }

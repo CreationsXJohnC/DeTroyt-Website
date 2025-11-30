@@ -1,15 +1,15 @@
-import Link from 'next/link'
 import styles from './Navbar.module.css'
+import KnobButton from './KnobButton'
 
 export function Navbar() {
   return (
     <nav className={styles.nav}>
-      <Link className={styles.link} href="/">Home</Link>
-      <Link className={styles.link} href="/journey">Journey</Link>
-      <Link className={styles.link} href="/work">Work</Link>
-      <Link className={styles.link} href="/gallery">Gallery</Link>
-      <Link className={styles.link} href="/shop">Shop</Link>
-      <Link className={styles.link} href="/contact">Contact</Link>
+      <KnobButton href="/" label="Home" color="#12f2f2" />
+      <KnobButton href="/journey" label="Journey" color="#a855f7" />
+      <KnobButton href="/work" label="Work" color="#f59e0b" />
+      <KnobButton href="/gallery" label="Gallery" color="#84cc16" />
+      <KnobButton href="/shop" label="Shop" color="#fb7185" />
+      <KnobButton href="/contact" label="Contact" color="#12f2f2" />
     </nav>
   )
 }

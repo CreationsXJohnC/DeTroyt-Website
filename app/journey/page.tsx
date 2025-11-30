@@ -8,10 +8,10 @@ const timeline = [
 
 export default function JourneyPage() {
   return (
-    <main>
+    <main style={{ position: 'relative', minHeight: '100vh', backgroundImage: "url('/assets/brandcontent/journey-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section">
-        <div className="container">
+      <section className="section" style={{ paddingTop: 260 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h1>Journey</h1>
           <div className="grid grid-2">
             {timeline.map((t, i) => (
@@ -29,8 +29,8 @@ export default function JourneyPage() {
           </div>
         </div>
       </section>
-      <section className="section">
-        <div className="container">
+      <section className="section" style={{ paddingTop: 40 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2>Professional Services</h2>
           <div className="grid grid-3">
             <div className="card">Live Sound</div>

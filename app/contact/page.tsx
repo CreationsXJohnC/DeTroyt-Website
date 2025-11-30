@@ -18,11 +18,11 @@ async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/contact-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section">
+      <section className="section" style={{ paddingTop: 140 }}>
         <div className="container">
-          <h1>Contact & Booking</h1>
+          <h1 style={{ fontSize: 48 }}>Contact & Booking</h1>
           <form onSubmit={handleSubmit}>
             <div className="grid grid-2">
               <input name="name" placeholder="Name" required />

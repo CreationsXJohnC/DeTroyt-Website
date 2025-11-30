@@ -1,27 +1,46 @@
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import { Lightbox } from '../../components/Lightbox'
+import fs from 'fs'
+import path from 'path'
 
-const items = [
-  { src: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop', alt: 'Studio' },
-  { src: 'https://images.unsplash.com/photo-1461783436728-0a007597b1f0?q=80&w=1200&auto=format&fit=crop', alt: 'Concert' },
-  { src: 'https://images.unsplash.com/photo-1514525253161-9f2e074c6f37?q=80&w=1200&auto=format&fit=crop', alt: 'DJ Decks' }
-]
+function getGalleryItems() {
+  const dir = path.join(process.cwd(), 'public', 'assets', 'gallery')
+  try {
+    const files = fs.readdirSync(dir)
+    const imgs = files
+      .filter(f => /\.(png|jpe?g|webp)$/i.test(f))
+      .map(f => ({ src: `/assets/gallery/${f}`, alt: f.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ') }))
+    return imgs.sort(() => Math.random() - 0.5)
+  } catch {
+    return []
+  }
+}
 
 export default function GalleryPage() {
+  const items = getGalleryItems()
   return (
-    <main>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/gallery-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section">
+      <section className="section" style={{ paddingTop: 135, paddingBottom: 0 }}>
         <div className="container">
-          <h1>Gallery</h1>
+          <h1 style={{ fontSize: 48, marginBottom: 0 }}>Gallery</h1>
           <Lightbox items={items} />
-          <div style={{ marginTop: 24 }}>
-            <iframe title="SoundCloud" width="100%" height="166" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/platform/sama-dee-all-night&color=%2312f2f2&auto_play=false"></iframe>
-          </div>
         </div>
       </section>
-      <Footer />
+      <Footer>
+        <div style={{ marginBottom: 12 }}>
+          <iframe
+            title="SoundCloud"
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/officialdetroyt&color=%2312f2f2&auto_play=false&visual=false&hide_related=true&show_comments=false&show_reposts=false&show_teaser=false"
+          ></iframe>
+        </div>
+      </Footer>
     </main>
   )
 }

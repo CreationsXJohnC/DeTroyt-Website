@@ -1,21 +1,26 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import styles from './Lightbox.module.css'
+import FaderBar from './FaderBar'
 
 type Item = { src: string; alt: string }
 
 export function Lightbox({ items }: { items: Item[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 16 }}>
-        {items.map((it, i) => (
-          <button key={i} onClick={() => setOpenIndex(i)} style={{ border: '1px solid #1c1c21', borderRadius: 12, overflow: 'hidden', padding: 0, background: 'transparent' }}>
-            <Image src={it.src} alt={it.alt} width={600} height={800} loading="lazy" />
-          </button>
-        ))}
+      <div ref={ref} className={styles.scrollWrap}>
+        <div className={styles.strip}>
+          {items.map((it, i) => (
+            <button key={i} className={styles.item} onClick={() => setOpenIndex(i)}>
+              <Image src={it.src} alt={it.alt} width={1200} height={800} loading="lazy" className={styles.imgStrip} />
+            </button>
+          ))}
+        </div>
       </div>
+      <FaderBar target={ref} />
       {openIndex !== null && (
         <div className={styles.overlay} onClick={() => setOpenIndex(null)}>
           <button className={`btn ${styles.close}`} onClick={() => setOpenIndex(null)}>Close</button>

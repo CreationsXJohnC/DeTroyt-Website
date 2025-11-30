@@ -1,30 +1,28 @@
-import Image from 'next/image'
 import styles from './page.module.css'
+import HeroBackground from '../components/HeroBackground'
+import MetalKnobButton from '../components/MetalKnobButton'
+import SocialBar from '../components/SocialBar'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
-import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <main>
+    <main style={{ position: 'relative', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+        <img src="/assets/brandcontent/home-bg.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      </div>
       <Navbar />
       <section className={styles.hero}>
-        <Image className={styles.bg} src="https://images.unsplash.com/photo-1518991791750-44e0f2f9f75e?q=80&w=2000&auto=format&fit=crop" alt="DeTroyt" fill priority sizes="100vw" />
         <div className={styles.overlay}>
-          <div className={styles.logoImg}>
-            <Image
-              src="/assets/brandcontent/detroytlogo/IMG_2651.PNG"
-              alt="DeTroyt logo"
-              width={420}
-              height={180}
-              priority
-              sizes="(max-width: 768px) 60vw, 420px"
-            />
-          </div>
-          <div className="muted">Audio Engineer • DJ • Artist • Producer</div>
+          <img className={styles.logoHoverHide} src="/assets/brandcontent/detroytlogo/IMG_2651.PNG" alt="DeTroyt logo" style={{ display: 'block', width: 'min(90vw, 895px)', height: 'auto', margin: '0 auto' }} />
+
+          <div className={`muted ${styles.subtitle}`} style={{ marginTop: 16, color: '#fff' }}>DeTroyt is a Professional Audio Engineer, DJ, Artist, and Producer based out of Washington, DC.</div>
           <div className={styles.ctaWrap}>
-            <Link className="btn" href="/contact">Book</Link>
-            <Link className="btn" href="/gallery">Experience</Link>
+            <div style={{ display: 'flex', gap: 44 }}>
+              <MetalKnobButton href="/contact" label="Book" glowColor="#ff3b3b" />
+              <MetalKnobButton href="/gallery" label="Experience" glowColor="#ff3b3b" />
+            </div>
+            <SocialBar />
           </div>
         </div>
       </section>

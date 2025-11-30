@@ -15,9 +15,9 @@ const certifications = [
 
 export default function WorkPage() {
   return (
-    <main>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/work-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section">
+      <section className="section" style={{ paddingTop: 180 }}>
         <div className="container">
           <h1>Professional Work Scope</h1>
           <h2>Collaborations</h2>

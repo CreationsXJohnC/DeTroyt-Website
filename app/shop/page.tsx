@@ -19,7 +19,7 @@ function PayButton({ productId, price }: { productId: string; price: number }) {
 
 export default function ShopPage() {
   return (
-    <main>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/shop-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
       <section className="section">
         <div className="container">
