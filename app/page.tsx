@@ -13,11 +13,11 @@ export default function HomePage() {
       </div>
       <Navbar />
       <section className={styles.hero}>
-        <div className={styles.overlay}>
+        <div className={styles.overlay} style={{ paddingTop: 96 }}>
           <img className={styles.logoHoverHide} src="/assets/brandcontent/detroytlogo/IMG_2651.PNG" alt="DeTroyt logo" style={{ display: 'block', width: 'min(90vw, 895px)', height: 'auto', margin: '0 auto' }} />
 
           <div className={`muted ${styles.subtitle}`} style={{ marginTop: 16, color: '#fff' }}>DeTroyt is a Professional Audio Engineer, DJ, Artist, and Producer based out of Washington, DC.</div>
-          <div className={styles.ctaWrap}>
+          <div className={styles.ctaWrap} style={{ paddingTop: 32 }}>
             <div style={{ display: 'flex', gap: 44 }}>
               <MetalKnobButton href="/contact" label="Book" glowColor="#ff3b3b" />
               <MetalKnobButton href="/gallery" label="Experience" glowColor="#ff3b3b" />

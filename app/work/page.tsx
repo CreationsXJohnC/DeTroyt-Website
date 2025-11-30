@@ -17,9 +17,9 @@ export default function WorkPage() {
   return (
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/work-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section" style={{ paddingTop: 180 }}>
+      <section className="section" style={{ paddingTop: 135 }}>
         <div className="container">
-          <h1>Professional Work Scope</h1>
+          <h1 style={{ fontSize: 48 }}>Professional Work Scope</h1>
           <h2>Collaborations</h2>
           <div className="grid grid-2">
             {collaborations.map((c, i) => (

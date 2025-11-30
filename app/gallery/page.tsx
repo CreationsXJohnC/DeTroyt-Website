@@ -28,8 +28,8 @@ export default function GalleryPage() {
           <Lightbox items={items} />
         </div>
       </section>
-      <Footer>
-        <div style={{ marginBottom: 12 }}>
+      <div style={{ marginTop: 'auto', padding: '0 0 8px' }}>
+        <div className="container">
           <iframe
             title="SoundCloud"
             width="100%"
@@ -40,7 +40,8 @@ export default function GalleryPage() {
             src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/officialdetroyt&color=%2312f2f2&auto_play=false&visual=false&hide_related=true&show_comments=false&show_reposts=false&show_teaser=false"
           ></iframe>
         </div>
-      </Footer>
+      </div>
+      <Footer />
     </main>
   )
 }
