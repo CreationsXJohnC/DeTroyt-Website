@@ -1,6 +1,6 @@
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
-import { Lightbox } from '../../components/Lightbox'
+import GalleryView from '../../components/GalleryView'
 import fs from 'fs'
 import path from 'path'
 
@@ -22,13 +22,12 @@ export default function GalleryPage() {
   return (
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/gallery-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section" style={{ paddingTop: 135, paddingBottom: 0 }}>
+      <section className="section" style={{ paddingTop: 165, paddingBottom: 0 }}>
         <div className="container">
-          <h1 style={{ fontSize: 48, marginBottom: 0 }}>Gallery</h1>
-          <Lightbox items={items} />
+          <GalleryView items={items} videoSrc="" />
         </div>
       </section>
-      <div style={{ marginTop: 'auto', padding: '0 0 8px' }}>
+      <div style={{ marginTop: 'auto', padding: '0 0 0', marginBottom: -72 }}>
         <div className="container">
           <iframe
             title="SoundCloud"
@@ -37,6 +36,7 @@ export default function GalleryPage() {
             scrolling="no"
             frameBorder="no"
             allow="autoplay"
+            style={{ boxShadow: '0 0 0 8px #000' }}
             src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/officialdetroyt&color=%2312f2f2&auto_play=false&visual=false&hide_related=true&show_comments=false&show_reposts=false&show_teaser=false"
           ></iframe>
         </div>

@@ -15,7 +15,7 @@ export function Lightbox({ items }: { items: Item[] }) {
         <div className={styles.strip}>
           {items.map((it, i) => (
             <button key={i} className={styles.item} onClick={() => setOpenIndex(i)}>
-              <Image src={it.src} alt={it.alt} width={1200} height={800} loading="lazy" className={styles.imgStrip} />
+              <Image src={it.src} alt={it.alt} width={1200} height={800} loading="lazy" className={`${styles.imgStrip} ${styles.frame}`} />
             </button>
           ))}
         </div>
@@ -25,7 +25,7 @@ export function Lightbox({ items }: { items: Item[] }) {
         <div className={styles.overlay} onClick={() => setOpenIndex(null)}>
           <button className={`btn ${styles.close}`} onClick={() => setOpenIndex(null)}>Close</button>
           <div className={styles.content}>
-            <Image src={items[openIndex].src} alt={items[openIndex].alt} width={1200} height={800} />
+            <Image src={items[openIndex].src} alt={items[openIndex].alt} width={1200} height={800} className={styles.overlayImg} />
           </div>
         </div>
       )}

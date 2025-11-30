@@ -1,5 +1,5 @@
-.wrap { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 32px; }
-.icon { width: 48px; height: 48px; display: inline-block; background: transparent; border: 0; border-radius: 0; overflow: visible; opacity: .95; transition: transform .15s ease, filter .15s ease; }
+.wrap { display: flex; justify-content: center; align-items: center; gap: 32px; margin-top: 40px; }
+.icon { width: 56px; height: 56px; display: inline-block; background: transparent; border: 0; border-radius: 0; overflow: visible; opacity: .95; transition: transform .15s ease, filter .15s ease; }
 .icon:hover { transform: translateY(-1px); }
 .iconLg { width: 64px; height: 64px; }
 .iconMd { width: 43px; height: 43px; }

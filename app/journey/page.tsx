@@ -1,6 +1,8 @@
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import BeatPad from '../../components/BeatPad'
+import ScreenCard from '../../components/ScreenCard'
+import screenStyles from '../../components/ScreenCard.module.css'
 
 const timeline = [
   { role: 'Audio Engineer', org: 'Freelance', dates: '2018–Present', achievements: ['Live sound', 'Playback', 'Touring'] },
@@ -13,26 +15,83 @@ export default function JourneyPage() {
       <Navbar />
       <section className="section" style={{ paddingTop: 135 }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h1 style={{ fontSize: 48 }}>Journey</h1>
-          <div className="grid grid-2">
-            {timeline.map((t, i) => (
-              <div key={i} className="card">
-                <div>{t.role}</div>
-                <div className="muted">{t.org} • {t.dates}</div>
-                <ul>
-                  {t.achievements.map((a, j) => <li key={j}>{a}</li>)}
-                </ul>
-              </div>
-            ))}
+          <h1 style={{ fontSize: 48, textAlign: 'center' }}>Journey</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: -24 }}>
+            <ScreenCard title="Professional Experience" subtitle="Download Resume" linkHref="/DeTroyt-resume.pdf"
+              tabs={[
+                {
+                  label: 'EX-1',
+                  content: (
+                    <div>
+                      <div className={screenStyles.sub1}>A2 | FOH Technician/Multitrack Recording Engineer</div>
+                      <div className={screenStyles.sub2} style={{ marginTop: 0 }}>Abi & Alan Luv Iz… (Erykah Badu & The Alchemist) Aug 2025</div>
+                      <ul className={screenStyles.subList}>
+                        <li>Set up and operate front-of-house sound systems, ensuring optimal audio quality for live performances</li>
+                        <li>Perform system checks, line checks, and soundchecks to confirm proper functionality of all audio inputs and outputs</li>
+                        <li>Troubleshoot and resolve technical issues in real time during live shows</li>
+                        <li>Maintain and calibrate PA systems, amplifiers, consoles, and outboard gear</li>
+                        <li>Set up and configure recording systems for live shows and studio sessions, including preamps, converters, and DAWs</li>
+                        <li>Maintain detailed session documentation, labeling, and track organization for post-production use</li>
+                      </ul>
+                    </div>
+                  )
+                },
+                { label: 'EX-2', content: (
+                  <div>
+                    <div className={screenStyles.sub1}>A1 | FOH/MON Engineer</div>
+                    <div className={screenStyles.sub2} style={{ marginTop: 0 }}>The Fillmore Silver Spring; Silver Spring Maryland, MD Aug 2022 - Current</div>
+                    <ul className={screenStyles.subList}>
+                      <li>Collaborate closely with artists and bands to understand their sound preferences and provide a tailored audio experience for each performance.</li>
+                      <li>Troubleshoot and resolve technical issues promptly to minimize disruptions before and during events.</li>
+                      <li>Provide valuable sound engineering consultation to artists and event organizers as needed.</li>
+                      <li>Maintain the PA & all connected system equipment to ensure audio reaches desired zones.</li>
+                    </ul>
+                  </div>
+                ) },
+                { label: 'EX-3', content: (
+                  <div>
+                    <div className={screenStyles.sub1}>A2 | Playback/Monitor Engineer</div>
+                    <div className={screenStyles.sub2} style={{ marginTop: 0 }}>LVRS ONLY Tour 2024/LVRS Paradise 2025 (Isiah Falls) ; June 2024 - September 2025</div>
+                    <ul className={screenStyles.subList}>
+                      <li>Managed and operated playback systems for live performances, including multitrack stems, timecode, and MIDI triggers.</li>
+                      <li>Synchronized audio playback with lighting, video, and automation cues using timecode and show control protocols.</li>
+                      <li>Conducted daily system checks and redundancy tests to ensure flawless performance and quick recovery in case of failure.</li>
+                      <li>Maintain clear, low-latency communication with stage crew and artists to quickly address on-stage monitoring needs.</li>
+                    </ul>
+                  </div>
+                ) },
+                { label: 'EX-4', content: (
+                  <div>
+                    <div className={screenStyles.sub1}>A2 | Monitor Engineer</div>
+                    <div className={screenStyles.sub2} style={{ marginTop: 0 }}>DeathFest (Death Metal Festival) ; Baltimore, MD May 2024</div>
+                    <ul className={screenStyles.subList}>
+                      <li>Set up and manage all stage monitoring systems, including wedges, sidefills, and in-ear monitors (IEMs).</li>
+                      <li>Dial in monitor mixes for multiple bands with varying setups, ofen on tight schedules and minimal line checks.</li>
+                      <li>Maintain and troubleshoot monitor console, RF systems, and stage patching throughout the event.</li>
+                      <li>Work closely with band members during soundcheck and changeovers to ensure clear, customized stage mixes.</li>
+                    </ul>
+                  </div>
+                ) },
+                { label: 'EX-5', content: (
+                  <div>
+                    <div className={screenStyles.sub1}>A1 | FOH Engineer</div>
+                    <div className={screenStyles.sub2} style={{ marginTop: 0 }}>White House (Vice President Kamala Harris); Washington, DC Aug 2023</div>
+                    <ul className={screenStyles.subList}>
+                      <li>Ensured seamless audio support in a protocol-driven environment with strict standards for reliability, clarity, and technical precision.</li>
+                      <li>Supported high-profile, nationally significant events with apenKon to detail, operational discretion, and adherence to formal production requirements.</li>
+                      <li>Provided monitor mixing from front of house using networked digital consoles to deliver clear, consistent audio to performers and speakers.</li>
+                    </ul>
+                  </div>
+                ) },
+              ]}
+            />
           </div>
-          <div style={{ marginTop: 6 }}>
-            <a className="btn" href="/resume.pdf" download>Download Resume</a>
-          </div>
+          
         </div>
       </section>
-      <section className="section" style={{ paddingTop: 8, paddingBottom: 0 }}>
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: 42, textAlign: 'center' }}>Professional Services</h2>
+      <section className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, marginTop: -12 }}>
+          <h2 style={{ fontSize: 42, textAlign: 'center', marginTop: 0, marginBottom: 8 }}>Professional Services</h2>
           <BeatPad
             items={[
               { label: 'Live Sound', color: '#ff4d6d' },

@@ -1,0 +1,21 @@
+.headerRow { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.title { font-size: 48px; margin: 0; }
+.subheader { font-size: 24px; color: #e6e6eb; }
+.modeBtn { background: transparent; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0 4px; }
+.modeBtn.active { color: #12f2f2; text-shadow: 0 0 8px rgba(18,242,242,.5); }
+.galleryBlock { margin-top: 8px; }
+.area { height: 44vh; display: flex; flex-direction: column; }
+.videoWrap { margin-top: 8px; display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; position: relative; }
+.video { width: min(88vw, 1000px); height: calc(100% - 64px); background: #000; object-fit: contain; }
+.controls { display: flex; gap: 18px; position: absolute; bottom: 0; }
+.ctrlBtn { padding: 10px 18px; font-size: 16px; border-radius: 6px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.1); color: #fff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; min-width: 92px; transition: box-shadow .15s ease, filter .15s ease; }
+.play { background: #1db954; border-color: rgba(29,185,84,.6); box-shadow: 0 0 20px 6px rgba(29,185,84,.35); }
+.play:active { box-shadow: 0 0 26px 8px rgba(29,185,84,.65); }
+.stop { background: #e11d48; border-color: rgba(225,29,72,.6); box-shadow: 0 0 20px 6px rgba(225,29,72,.35); }
+.stop:active { box-shadow: 0 0 26px 8px rgba(225,29,72,.65); }
+.icon { display: inline-block; }
+.playIcon { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 14px solid #fff; }
+.stopIcon { width: 14px; height: 14px; background: #fff; }
+.slash { color: #fff; margin: 0 6px; font-weight: 700; }
+.playActive { box-shadow: 0 0 26px 8px rgba(29,185,84,.65); }
+.stopActive { box-shadow: 0 0 26px 8px rgba(225,29,72,.65); }
