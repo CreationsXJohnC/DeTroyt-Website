@@ -6,6 +6,7 @@ node_modules/
 # Env & local config
 .env*
 .vercel/
+.trae/
 
 # OS junk
 .DS_Store
