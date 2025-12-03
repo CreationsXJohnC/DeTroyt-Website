@@ -8,13 +8,40 @@ type Item = { src: string; alt: string }
 export default function GalleryView({ items, videoSrc }: { items: Item[]; videoSrc?: string }) {
   const [mode, setMode] = useState<'photo' | 'video'>('photo')
   const videoRef = useRef<HTMLVideoElement>(null)
+  const ytRef = useRef<HTMLIFrameElement>(null)
   const [activeControl, setActiveControl] = useState<'play' | 'stop' | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const ytId = (() => {
+    if (!videoSrc) return null
+    const m1 = videoSrc.match(/youtu\.be\/(\w+)/)
+    const m2 = videoSrc.match(/v=([\w-]+)/)
+    return m1?.[1] || m2?.[1] || null
+  })()
+  const ytSrc = ytId ? `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1&enablejsapi=1` : null
 
-  const play = () => { const v = videoRef.current; if (v) v.play() }
-  const stop = () => { const v = videoRef.current; if (v) { v.pause(); v.currentTime = 0 } }
+  const togglePlayPause = () => {
+    if (ytSrc && ytRef.current?.contentWindow) {
+      const cmd = isPlaying ? 'pauseVideo' : 'playVideo'
+      ytRef.current.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*')
+      setIsPlaying(!isPlaying)
+    } else {
+      const v = videoRef.current
+      if (!v) return
+      if (v.paused) { v.play(); setIsPlaying(true) } else { v.pause(); setIsPlaying(false) }
+    }
+  }
+  const stop = () => {
+    if (ytSrc && ytRef.current?.contentWindow) {
+      ytRef.current.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*')
+      setIsPlaying(false)
+    } else {
+      const v = videoRef.current
+      if (v) { v.pause(); v.currentTime = 0; setIsPlaying(false) }
+    }
+  }
 
   useEffect(() => {
-    if (mode === 'photo') setActiveControl(null)
+    if (mode === 'photo') { setActiveControl(null); setIsPlaying(false) }
   }, [mode])
 
   return (
@@ -35,9 +62,13 @@ export default function GalleryView({ items, videoSrc }: { items: Item[]; videoS
           </div>
         ) : (
           <div className={styles.videoWrap}>
-            <video ref={videoRef} className={styles.video} src={videoSrc || ''} controls={false} preload="metadata" />
+            {ytSrc ? (
+              <iframe ref={ytRef} className={styles.videoFrame} src={ytSrc} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+            ) : (
+              <video ref={videoRef} className={styles.video} src={videoSrc || ''} controls={false} preload="metadata" />
+            )}
             <div className={styles.controls}>
-            <button className={`${styles.ctrlBtn} ${styles.play} ${activeControl === 'play' ? styles.playActive : ''}`} onClick={() => { setActiveControl('play'); play() }} aria-label="Play/Pause">
+            <button className={`${styles.ctrlBtn} ${styles.play} ${activeControl === 'play' ? styles.playActive : ''}`} onClick={() => { setActiveControl('play'); togglePlayPause() }} aria-label="Play/Pause">
               <span className={`${styles.icon} ${styles.playIcon}`} />
               <span className={styles.slash}>/</span>
               <span className={`${styles.icon}`} style={{ width: 16, height: 16, background: 'linear-gradient(to right, #fff 0 5px, transparent 5px 9px, #fff 9px 14px, transparent 14px 100%)' }} />

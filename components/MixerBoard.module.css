@@ -1,0 +1,43 @@
+.wrap { background: #0b0d11; border-radius: 12px; border: 2px solid #1a1f2b; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 12px 28px rgba(0,0,0,.55); padding: 16px; width: min(98vw, 1240px); margin: 0 auto; color: #e6f2ff; box-sizing: border-box; overflow: hidden; }
+.top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.lcd { height: 160px; border-radius: 10px; background: radial-gradient(120% 120% at 50% 10%, #43b0ff 0%, #1f86ff 35%, #1263da 65%, #0c4fb4 100%); box-shadow: inset 0 2px 18px rgba(255,255,255,.18), inset 0 -10px 20px rgba(0,0,0,.35), 0 0 0 2px rgba(19,86,204,.35); position: relative; overflow: hidden; }
+.lcdTall { height: 240px; }
+.lcdTitle { position: absolute; top: 10px; left: 12px; font-weight: 800; letter-spacing: .03em; }
+.lcdGrid { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 6px, rgba(255,255,255,.05) 6px 7px); mix-blend-mode: screen; }
+.ioPanel { height: 160px; border-radius: 10px; background: #0f1117; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); position: relative; padding: 12px; }
+.ioTitle { font-weight: 800; letter-spacing: .03em; margin-bottom: 8px; }
+.ioTop { display: flex; gap: 14px; align-items: center; }
+.ioBottom { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.ioSection { display: flex; gap: 10px; align-items: center; }
+.jackXLR { width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #0a0c12 0, #161a22 55%, #2b3140 100%); border: 2px solid #93a3bf; position: relative; box-shadow: inset 0 0 0 2px rgba(255,255,255,.06); }
+.jackXLR::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 16px; height: 16px; border-radius: 50%; background: #000; box-shadow: 0 0 0 2px #222; }
+.jackLabel { font-size: 11px; color: #e6f2ff; }
+.jackRCA { width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px #bbb; }
+.jackRCA.red { background: #ff4444; }
+.jackRCA.white { background: #f5f5f5; }
+.jackTRS { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #dfe6f7 0, #98a5c2 45%, #4b556e 100%); border: 1px solid #222838; }
+.ioBar { height: 12px; border-radius: 3px; background: rgba(255,255,255,.22); color: #061f3b; display: flex; align-items: center; justify-content: center; font-size: 10px; padding: 0 8px; }
+.panel { margin-top: 14px; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 10px; overflow: hidden; }
+.strip { background: #111317; border-radius: 8px; padding: 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; }
+.btnRow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 100%; }
+.mainBtnCol { display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: flex-end; margin-top: auto; }
+.mainBtnCol .btn { width: 90px; }
+.btn { border: 1px solid #3a3f4d; border-radius: 6px; height: 28px; background: #1a1f2b; color: #cfe7ff; cursor: pointer; font-size: 12px; }
+.btn.active { background: #12f2f2; color: #062248; box-shadow: 0 0 12px rgba(18,242,242,.65); }
+.faderSlot { position: relative; height: 180px; width: 10px; background: linear-gradient(#2a2f3b,#12151c); border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+.faderThumb { position: absolute; left: 50%; transform: translateX(-50%); width: 24px; height: 14px; background: #e5e8f0; border-radius: 4px; box-shadow: 0 1px 0 #000, inset 0 0 0 1px rgba(0,0,0,.25); }
+.meter { width: 6px; height: 180px; background: linear-gradient(#0f0 0,#0f0 30%,#ff0 60%,#f00 100%); border-radius: 3px; opacity: .4; }
+.label { margin-top: 4px; font-size: 12px; color: #9fbde7; }
+.knobRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+.knob { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #dfe6f7 0, #98a5c2 45%, #4b556e 100%); border: 1px solid #222838; cursor: pointer; box-shadow: 0 0 0 2px rgba(255,255,255,.05); }
+.knob.active { box-shadow: 0 0 14px 4px rgba(18,242,242,.55); }
+.right { margin-top: 16px; display: grid; grid-template-columns: 1fr auto; align-items: center; }
+.bank { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.bankBtn { border: 1px solid #3a3f4d; border-radius: 6px; padding: 8px 10px; background: #1a1f2b; color: #cfe7ff; cursor: pointer; font-size: 12px; }
+.bankBtn.active { background: #ffd166; color: #3a2a00; box-shadow: 0 0 10px rgba(255,209,102,.6); }
+.master { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-left: 12px; min-height: 280px; }
+.master .faderSlot { background: linear-gradient(#3a1f1f,#1a1010); }
+.master .faderThumb { background: #ff6666; }
+
+@media (max-width: 900px) { .panel { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .panel { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

@@ -4,4 +4,4 @@
 .knob::after { content: ""; position: absolute; left: 50%; top: 12px; width: 8px; height: 8px; border-radius: 50%; transform: translateX(-50%); background: var(--glow, #12f2f2); box-shadow: 0 0 10px var(--glow, #12f2f2); }
 .wrap:hover .knob { transform: rotate(320deg); filter: brightness(1.05); box-shadow: inset 0 2px 6px rgba(255,255,255,.9), inset 0 -6px 12px rgba(0,0,0,.25), 0 22px 60px rgba(0,0,0,.45); }
 .wrap:active .knob { transform: rotate(360deg); }
-.labelIn { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #ff3b3b; text-shadow: 0 1px 2px rgba(0,0,0,.4); pointer-events: none; }
+.labelIn { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.06em; color: #ff3b3b; text-shadow: 0 1px 2px rgba(0,0,0,.4); pointer-events: none; width: 78%; text-align: center; line-height: 1.02; }

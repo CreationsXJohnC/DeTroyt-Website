@@ -1,0 +1,73 @@
+{
+  "title": "Professional Experience",
+  "subtitle": "Download Resume",
+  "resumeHref": "/DeTroyt-resume.pdf",
+  "tabs": [
+    {
+      "label": "EX-1",
+      "lines": [
+        "A2 | FOH Technician/Multitrack Recording Engineer",
+        "Abi & Alan Luv Iz… (Erykah Badu & The Alchemist) Aug 2025"
+      ],
+      "list": [
+        "Set up and operate front-of-house sound systems, ensuring optimal audio quality for live performances",
+        "Perform system checks, line checks, and soundchecks to confirm proper functionality of all audio inputs and outputs",
+        "Troubleshoot and resolve technical issues in real time during live shows",
+        "Maintain and calibrate PA systems, amplifiers, consoles, and outboard gear",
+        "Set up and configure recording systems for live shows and studio sessions, including preamps, converters, and DAWs",
+        "Maintain detailed session documentation, labeling, and track organization for post-production use"
+      ]
+    },
+    {
+      "label": "EX-2",
+      "lines": [
+        "A1 | FOH/MON Engineer",
+        "The Fillmore Silver Spring; Silver Spring Maryland, MD Aug 2022 - Current"
+      ],
+      "list": [
+        "Collaborate closely with artists and bands to understand their sound preferences and provide a tailored audio experience for each performance.",
+        "Troubleshoot and resolve technical issues promptly to minimize disruptions before and during events.",
+        "Provide valuable sound engineering consultation to artists and event organizers as needed.",
+        "Maintain the PA & all connected system equipment to ensure audio reaches desired zones."
+      ]
+    },
+    {
+      "label": "EX-3",
+      "lines": [
+        "A2 | Playback/Monitor Engineer",
+        "LVRS ONLY Tour 2024/LVRS Paradise 2025 (Isiah Falls) ; June 2024 - September 2025"
+      ],
+      "list": [
+        "Managed and operated playback systems for live performances, including multitrack stems, timecode, and MIDI triggers.",
+        "Synchronized audio playback with lighting, video, and automation cues using timecode and show control protocols.",
+        "Conducted daily system checks and redundancy tests to ensure flawless performance and quick recovery in case of failure.",
+        "Maintain clear, low-latency communication with stage crew and artists to quickly address on-stage monitoring needs."
+      ]
+    },
+    {
+      "label": "EX-4",
+      "lines": [
+        "A2 | Monitor Engineer",
+        "DeathFest (Death Metal Festival) ; Baltimore, MD May 2024"
+      ],
+      "list": [
+        "Set up and manage all stage monitoring systems, including wedges, sidefills, and in-ear monitors (IEMs).",
+        "Dial in monitor mixes for multiple bands with varying setups, often on tight schedules and minimal line checks.",
+        "Maintain and troubleshoot monitor console, RF systems, and stage patching throughout the event.",
+        "Work closely with band members during soundcheck and changeovers to ensure clear, customized stage mixes."
+      ]
+    },
+    {
+      "label": "EX-5",
+      "lines": [
+        "A1 | FOH Engineer",
+        "White House (Vice President Kamala Harris); Washington, DC Aug 2023"
+      ],
+      "list": [
+        "Ensured seamless audio support in a protocol-driven environment with strict standards for reliability, clarity, and technical precision.",
+        "Supported high-profile, nationally significant events with attention to detail, operational discretion, and adherence to formal production requirements.",
+        "Provided monitor mixing from front of house using networked digital consoles to deliver clear, consistent audio to performers and speakers."
+      ]
+    }
+  ]
+}

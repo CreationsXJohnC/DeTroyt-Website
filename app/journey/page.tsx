@@ -3,6 +3,7 @@ import { Footer } from '../../components/Footer'
 import BeatPad from '../../components/BeatPad'
 import ScreenCard from '../../components/ScreenCard'
 import screenStyles from '../../components/ScreenCard.module.css'
+/* removed JourneyDataScreen integration */
 
 const timeline = [
   { role: 'Audio Engineer', org: 'Freelance', dates: '2018–Present', achievements: ['Live sound', 'Playback', 'Touring'] },
@@ -17,10 +18,66 @@ export default function JourneyPage() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h1 style={{ fontSize: 48, textAlign: 'center' }}>Journey</h1>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: -24 }}>
-            <ScreenCard title="Professional Experience" subtitle="Download Resume" linkHref="/DeTroyt-resume.pdf"
+            <ScreenCard title="Troy M. Gardner" subtitle="Download Resume" linkHref="/DeTroyt-resume.pdf" showClock
               tabs={[
+                { label: '🏠', content: (
+                  <div>
+                    <div className={screenStyles.sub2}>mr.troymgardner@gmail.com • (313) 409 8769 • @OﬃcialDeTroyt</div>
+                    <div className={screenStyles.sub1} style={{ marginTop: 8 }}>
+                      Amicable audio engineer willing to tour and work with venues to ensure the best possible auditory experience. Extensive experience in setting up, installing & maintaining a variety of audio equipment. Proficient in loudspeakers, amplifiers, RF coordination, digital consoles & more. Comfortable using digital & multimedia recording, as well as sound applications including Pro-Tools & Ableton Live 12. Detail-oriented & friendly with a calm & professional demeanor.
+                    </div>
+                  </div>
+                ) },
+                { label: 'Collabs', titleOverride: 'Collaborations', content: (
+                  <div>
+                    <div className={screenStyles.sub1}>Artist • Musician • Enterprise</div>
+                    <ul className={screenStyles.subList}>
+                      <li>Erykah Badu</li>
+                      <li>The Alchemist</li>
+                      <li>Isiah Falls</li>
+                    </ul>
+                  </div>
+                ) },
+                { label: 'G&E', titleOverride: 'Gigs & Events', content: (
+                  <div>
+                    <ul className={screenStyles.subList} style={{ fontSize: 22, marginTop: 0 }}>
+                      <li>Abi & Alan Luv Iz… August 2025</li>
+                      <li>LVRS Paradise July 2025</li>
+                      <li>LVRS ONLY Tour June 2024</li>
+                      <li>DeathFest (Death Metal Festival) May 2024</li>
+                    </ul>
+                  </div>
+                ) },
+                { label: 'Certs', titleOverride: 'Certifications & Skills', content: (
+                  <div className={screenStyles.sub1}>
+                    Operating Digital Consoles <br/>
+                    • Avid - (S6L, Profile, SC48) <br/>
+                    • DigiCo - (SD Series, Quantum) <br/>
+                    • Midas - (Pro Series, M32) <br/>
+                    • SoundCraf - (Vi Series) <br/>
+                    • Allen & Heath - (SC, SQ, DLive) <br/>
+                    • Yamaha - (CL, QL, Rivage) <br/>
+                    <br/>
+                    Touring (Domestic & International) <br/>
+                    • 150-2500 Capacity Venue run <br/>
+                    <br/>
+                    Festivals (FOH/Monitors/Playback) <br/>
+                    • Local & Domestic US <br/>
+                    <br/>
+                    Eﬀective Communication <br/>
+                    Signal Flow <br/>
+                    Patching & Routing <br/>
+                    Mix & Mastering <br/>
+                    <br/>
+                    Programming & Arranging <br/>
+                    • Ableton Live 12 <br/>
+                    • Pro Tools <br/>
+                    • Logic Pro X <br/>
+                    • Reaper
+                  </div>
+                ) },
                 {
-                  label: 'EX-1',
+                  label: 'EX-1', titleOverride: 'Professional Experience',
                   content: (
                     <div>
                       <div className={screenStyles.sub1}>A2 | FOH Technician/Multitrack Recording Engineer</div>
@@ -36,7 +93,7 @@ export default function JourneyPage() {
                     </div>
                   )
                 },
-                { label: 'EX-2', content: (
+                { label: 'EX-2', titleOverride: 'Professional Experience', content: (
                   <div>
                     <div className={screenStyles.sub1}>A1 | FOH/MON Engineer</div>
                     <div className={screenStyles.sub2} style={{ marginTop: 0 }}>The Fillmore Silver Spring; Silver Spring Maryland, MD Aug 2022 - Current</div>
@@ -48,7 +105,7 @@ export default function JourneyPage() {
                     </ul>
                   </div>
                 ) },
-                { label: 'EX-3', content: (
+                { label: 'EX-3', titleOverride: 'Professional Experience', content: (
                   <div>
                     <div className={screenStyles.sub1}>A2 | Playback/Monitor Engineer</div>
                     <div className={screenStyles.sub2} style={{ marginTop: 0 }}>LVRS ONLY Tour 2024/LVRS Paradise 2025 (Isiah Falls) ; June 2024 - September 2025</div>
@@ -60,7 +117,7 @@ export default function JourneyPage() {
                     </ul>
                   </div>
                 ) },
-                { label: 'EX-4', content: (
+                { label: 'EX-4', titleOverride: 'Professional Experience', content: (
                   <div>
                     <div className={screenStyles.sub1}>A2 | Monitor Engineer</div>
                     <div className={screenStyles.sub2} style={{ marginTop: 0 }}>DeathFest (Death Metal Festival) ; Baltimore, MD May 2024</div>
@@ -72,7 +129,7 @@ export default function JourneyPage() {
                     </ul>
                   </div>
                 ) },
-                { label: 'EX-5', content: (
+                { label: 'EX-5', titleOverride: 'Professional Experience', content: (
                   <div>
                     <div className={screenStyles.sub1}>A1 | FOH Engineer</div>
                     <div className={screenStyles.sub2} style={{ marginTop: 0 }}>White House (Vice President Kamala Harris); Washington, DC Aug 2023</div>

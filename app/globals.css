@@ -1,9 +1,14 @@
 :root { color-scheme: dark; }
 :root { color-scheme: dark; }
-@font-face { font-family: 'Marlboro'; src: url('/fonts/Marlboro.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'JourneyScreen'; src: url('/fonts/JourneyScreen.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Marlboro', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: #0b0b0f; color: #e6e6eb; font-size: 18px; line-height: 1.6; letter-spacing: .02em; }
+@font-face { font-family: 'CodersCrux'; src: url('/fonts/CodersCrux.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'CodersCrux'; src: url('/fonts/CodersCrux.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'CodersCrux'; src: url('/fonts/CodersCrux.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'CodeProbe'; src: url('/fonts/Code.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'CodeProbe'; src: url('/fonts/Code.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'CodeProbe'; src: url('/fonts/Code.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+body { margin: 0; background: #0b0b0f; color: #e6e6eb; font-size: 18px; line-height: 1.6; letter-spacing: 0; font-family: 'CodeProbe','CodersCrux', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
 @media (max-width: 640px) { body { font-size: 16px; } }
 a { color: inherit; text-decoration: none; }
 * { box-sizing: border-box; }
@@ -18,4 +23,4 @@ img { max-width: 100%; height: auto; display: block; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .card { border: 1px solid #1c1c21; border-radius: 16px; background: #111118; padding: 24px; }
 .muted { color: #a3a3ad; }
-h1, h2, h3 { text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 0 8px rgba(0,0,0,.35); }
+h1, h2, h3 { text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 0 8px rgba(0,0,0,.35); letter-spacing: -0.01em; }

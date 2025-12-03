@@ -1,5 +1,6 @@
 "use client"
 import { useRef, useState } from 'react'
+import Link from 'next/link'
 import styles from './BeatPad.module.css'
 
 export default function BeatPad({ items }: { items: { label: string; color: string }[] }) {
@@ -29,9 +30,9 @@ export default function BeatPad({ items }: { items: { label: string; color: stri
       )}
       <div className={styles.grid}>
         {items.map((it, i) => (
-          <div key={i} className={styles.pad} style={{ ['--pad-color' as any]: it.color }}>
+          <Link key={i} href={`/contact?service=${encodeURIComponent(it.label)}`} className={styles.pad} style={{ ['--pad-color' as any]: it.color }}>
             <div className={styles.label}>{it.label}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

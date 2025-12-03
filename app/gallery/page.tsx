@@ -24,7 +24,7 @@ export default function GalleryPage() {
       <Navbar />
       <section className="section" style={{ paddingTop: 165, paddingBottom: 0 }}>
         <div className="container">
-          <GalleryView items={items} videoSrc="" />
+          <GalleryView items={items} videoSrc="https://youtu.be/RtRnwiYXqXI" />
         </div>
       </section>
       <div style={{ marginTop: 'auto', padding: '0 0 0', marginBottom: -72 }}>

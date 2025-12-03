@@ -1,5 +1,6 @@
 "use client"
 import { type FormEvent } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 
@@ -17,6 +18,8 @@ async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 }
 
 export default function ContactPage() {
+  const searchParams = useSearchParams()
+  const presetService = searchParams.get('service') || ''
   return (
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/contact-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
@@ -28,7 +31,7 @@ export default function ContactPage() {
               <input name="name" placeholder="Name" required />
               <input name="email" placeholder="Email" type="email" required />
               <input name="phone" placeholder="Phone" />
-              <input name="service" placeholder="Service" />
+              <input name="service" placeholder="Service" defaultValue={presetService} />
               <input name="date" placeholder="Date" type="date" />
               <input name="budget" placeholder="Budget" />
             </div>
