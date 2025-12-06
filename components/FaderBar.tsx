@@ -18,7 +18,9 @@ export default function FaderBar({ target }: { target: React.RefObject<HTMLDivEl
       if (!rangeRef.current || !knobRef.current) return
       const value = maxScroll > 0 ? (el.scrollLeft / maxScroll) * 100 : 0
       rangeRef.current.value = String(value)
-      const x = (value / 100) * (knobRef.current.parentElement!.clientWidth)
+      const trackW = knobRef.current.parentElement!.clientWidth
+      const knobW = knobRef.current.getBoundingClientRect().width
+      const x = (value / 100) * (trackW - knobW)
       knobRef.current.style.left = `${x}px`
     }
     el.addEventListener('scroll', onScroll)
@@ -35,7 +37,9 @@ export default function FaderBar({ target }: { target: React.RefObject<HTMLDivEl
     const value = Number(rangeRef.current.value)
     const newScroll = (value / 100) * maxScroll
     el.scrollTo({ left: newScroll, behavior: 'smooth' })
-    const x = (value / 100) * (knobRef.current.parentElement!.clientWidth)
+    const trackW = knobRef.current.parentElement!.clientWidth
+    const knobW = knobRef.current.getBoundingClientRect().width
+    const x = (value / 100) * (trackW - knobW)
     knobRef.current.style.left = `${x}px`
   }
 
@@ -44,10 +48,11 @@ export default function FaderBar({ target }: { target: React.RefObject<HTMLDivEl
     const el = target.current
     if (!track || !el || !knobRef.current || !rangeRef.current) return
     const rect = track.getBoundingClientRect()
-    let pos = pageX - rect.left
+    const knobW = knobRef.current.getBoundingClientRect().width
+    let pos = pageX - rect.left - knobW / 2
     if (pos < 0) pos = 0
-    if (pos > rect.width) pos = rect.width
-    const value = (pos / rect.width) * 100
+    if (pos > rect.width - knobW) pos = rect.width - knobW
+    const value = (pos / (rect.width - knobW)) * 100
     rangeRef.current.value = String(value)
     const newScroll = (value / 100) * (el.scrollWidth - el.clientWidth)
     setMaxScroll(el.scrollWidth - el.clientWidth)

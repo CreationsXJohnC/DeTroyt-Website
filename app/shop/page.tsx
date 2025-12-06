@@ -19,20 +19,11 @@ function PayButton({ productId, price }: { productId: string; price: number }) {
 
 export default function ShopPage() {
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/shop-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', backgroundImage: "url('/assets/brandcontent/shop-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section" style={{ paddingTop: 135 }}>
-        <div className="container">
-          <h1 style={{ fontSize: 48 }}>Shop</h1>
-          <div className="grid grid-2">
-            {products.map(p => (
-              <div key={p.id} className="card">
-                <div>{p.name}</div>
-                <div className="muted">{p.type} • ${p.price}</div>
-                <div style={{ marginTop: 12 }}><PayButton productId={p.id} price={p.price} /></div>
-              </div>
-            ))}
-          </div>
+      <section className="section" style={{ paddingTop: 0, paddingBottom: 0, flex: 1, display: 'grid', placeItems: 'center' }}>
+        <div className="container" style={{ display: 'grid', placeItems: 'center' }}>
+          <h1 style={{ fontSize: 48, textAlign: 'center', textShadow: '0 0 10px rgba(0,0,0,.9), 0 0 18px rgba(0,0,0,.7)' }}>Shop Coming Soon!</h1>
         </div>
       </section>
       <Footer />

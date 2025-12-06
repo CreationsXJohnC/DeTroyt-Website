@@ -14,7 +14,7 @@ export default function JourneyPage() {
   return (
     <main style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: "url('/assets/brandcontent/journey-bg.jpg?v=1')", backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <section className="section" style={{ paddingTop: 135 }}>
+      <section className="section" style={{ paddingTop: 135, paddingBottom: 20 }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h1 style={{ fontSize: 48, textAlign: 'center' }}>Journey</h1>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: -24 }}>
@@ -31,7 +31,7 @@ export default function JourneyPage() {
                 { label: 'Collabs', titleOverride: 'Collaborations', content: (
                   <div>
                     <div className={screenStyles.sub1}>Artist • Musician • Enterprise</div>
-                    <ul className={screenStyles.subList}>
+                    <ul className={screenStyles.subList} style={{ fontSize: 'clamp(16px, 3vw, 22px)' }}>
                       <li>Erykah Badu</li>
                       <li>The Alchemist</li>
                       <li>Isiah Falls</li>
@@ -40,7 +40,7 @@ export default function JourneyPage() {
                 ) },
                 { label: 'G&E', titleOverride: 'Gigs & Events', content: (
                   <div>
-                    <ul className={screenStyles.subList} style={{ fontSize: 22, marginTop: 0 }}>
+                    <ul className={screenStyles.subList} style={{ fontSize: 'clamp(12px, 2.2vw, 22px)', marginTop: 0 }}>
                       <li>Abi & Alan Luv Iz… August 2025</li>
                       <li>LVRS Paradise July 2025</li>
                       <li>LVRS ONLY Tour June 2024</li>

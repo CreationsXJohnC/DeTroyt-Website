@@ -1,13 +1,13 @@
-.grid { display: grid; grid-template-columns: repeat(3, minmax(140px, 1fr)); gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(clamp(80px, 28vw, 140px), 1fr)); gap: clamp(8px, 2.2vw, 14px); }
 .container { position: relative; display: flex; justify-content: center; }
 .cursorNone { cursor: none; }
 .cursorImg { position: absolute; pointer-events: none; z-index: 2; transform: translate(-44px, -10px) scale(.4); transform-origin: top left; filter: invert(1) brightness(2) drop-shadow(0 0 1px #000) drop-shadow(0 0 2px #000); }
-.pad { position: relative; aspect-ratio: 1 / 1; border-radius: 14px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 17px; font-weight: 800; letter-spacing: -0.06em; background: var(--pad-color, #ff3b3b); box-shadow: 0 0 14px 4px color-mix(in srgb, var(--pad-color, #ff3b3b) 55%, transparent), inset 0 6px 12px rgba(255,255,255,.2), inset 0 -8px 14px rgba(0,0,0,.22); border: 1px solid rgba(0,0,0,.22); }
+.pad { position: relative; aspect-ratio: 1 / 1; border-radius: 14px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: clamp(12px, 2.6vw, 17px); font-weight: 800; letter-spacing: -0.06em; background: var(--pad-color, #ff3b3b); box-shadow: 0 0 14px 4px color-mix(in srgb, var(--pad-color, #ff3b3b) 55%, transparent), inset 0 6px 12px rgba(255,255,255,.2), inset 0 -8px 14px rgba(0,0,0,.22); border: 1px solid rgba(0,0,0,.22); }
 .pad, .pad * { cursor: url('/assets/ui/hand-cursor.png') 16 16, url('/assets/ui/pointer-xl.png') 0 0, pointer !important; }
 .pad:hover, .pad:hover * { cursor: none !important; }
 .pad::before { content: ""; position: absolute; inset: 0; border-radius: 14px; background: radial-gradient(90% 90% at 50% 25%, rgba(255,255,255,.4) 0%, rgba(255,255,255,.18) 30%, transparent 60%), linear-gradient(180deg, transparent 0%, rgba(0,0,0,.12) 100%); pointer-events: none; }
 .pad:hover { filter: brightness(1.04); box-shadow: 0 0 36px 10px color-mix(in srgb, var(--pad-color, #ff3b3b) 85%, transparent), inset 0 10px 20px rgba(255,255,255,.3), inset 0 -12px 22px rgba(0,0,0,.28); }
 .pad:hover { filter: brightness(1.04); box-shadow: 0 0 36px 10px color-mix(in srgb, var(--pad-color, #ff3b3b) 85%, transparent), inset 0 10px 20px rgba(255,255,255,.3), inset 0 -12px 22px rgba(0,0,0,.28); }
-.label { position: relative; z-index: 1; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,.4); letter-spacing: -0.06em; line-height: 1.0; width: 84%; margin: 0 auto; word-break: break-word; }
+.label { position: relative; z-index: 1; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,.4); letter-spacing: -0.06em; line-height: 1.0; width: 86%; margin: 0 auto; word-break: break-word; }
 .label { transition: color .15s ease, text-shadow .15s ease; }
 .pad:hover .label { color: var(--pad-color, #ff3b3b); text-shadow: 0 0 6px color-mix(in srgb, var(--pad-color, #ff3b3b) 60%, transparent), 0 0 14px color-mix(in srgb, var(--pad-color, #ff3b3b) 85%, transparent); }

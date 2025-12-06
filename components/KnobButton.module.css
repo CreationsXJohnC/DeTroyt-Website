@@ -6,6 +6,22 @@
 .wrap:hover .knob { transform: translateY(-1px) rotate(320deg); filter: brightness(1.05); box-shadow: 0 0 26px 8px var(--knob-color, #12f2f2); }
 .wrap:active .knob { transform: rotate(360deg); }
 .label { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: #e6e6eb; transition: color .15s ease, text-shadow .15s ease; text-align: center; margin-left: 8px; }
+@media (max-width: 480px) {
+  .wrap { width: 74px; }
+  .label { font-size: 12px; margin-left: 4px; }
+}
+@media (max-width: 420px) {
+  .wrap { width: 66px; }
+  .knob { width: 52px; height: 52px; }
+  .logo { top: 30px; width: 22px; }
+  .label { font-size: 11px; margin-left: 3px; }
+}
+@media (max-width: 360px) {
+  .wrap { width: 58px; }
+  .knob { width: 46px; height: 46px; }
+  .logo { top: 28px; width: 20px; }
+  .label { font-size: 10px; margin-left: 2px; }
+}
 .wrap:hover .label { color: var(--knob-color, #12f2f2); text-shadow: 0 0 10px var(--knob-color, #12f2f2); }
 
 .active .knob { filter: brightness(1.05); box-shadow: 0 0 26px 8px var(--knob-color, #12f2f2); }
